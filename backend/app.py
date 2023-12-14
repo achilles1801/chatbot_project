@@ -1,13 +1,13 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-from dotenv import dotenv_values
-from openai import OpenAI
+from flask import Flask, request, jsonify # want to make a flask app so i need to import flask, request and jsonify needed to send and recieve data
+from flask_cors import CORS # cross origin resource sharing, allows us to make requests from our react app to our flask app
+from dotenv import dotenv_values # allows us to access our .env file
+from openai import OpenAI # openai api
 
 
-app = Flask(__name__, template_folder="template")
-CORS(app)
+app = Flask(__name__) # this created an instance of the flask app, name is what python assigns to the file
+CORS(app) # this allows us to make requests from our react app to our flask app
 
-config = dotenv_values(".env")
+config = dotenv_values(".env") # this loads the .env file data into a dictionary called config 
 
 @app.route('/chat', methods=['POST'])
 def chat():

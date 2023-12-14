@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   const [input, setInput] = useState('');
@@ -28,8 +29,7 @@ function App() {
   };
 
   return (
-
-  
+    
     <div className="App">
       <header className="App-header">
       <input type="text" value={input} onChange={e => setInput(e.target.value)} />
